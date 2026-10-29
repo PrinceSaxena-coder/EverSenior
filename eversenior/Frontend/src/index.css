@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@theme {
+  --color-cream: #f7f2e9; --color-sand: #ece1cd; --color-ink: #231d17; --color-bark: #5b4d3f; --color-moss: #5f6b3c; --color-clay: #a4693f;
+  --font-serif: "Fraunces", Georgia, serif; --font-sans: "DM Sans", system-ui, sans-serif;
+}
+html { scroll-behavior: smooth; }
+body { @apply bg-cream text-ink font-sans antialiased overflow-x-hidden; }
+:focus-visible { outline: 2px solid var(--color-moss); outline-offset: 3px; }
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .9s ease, transform .9s ease; }
+.reveal.is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
