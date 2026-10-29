@@ -1,0 +1,14 @@
+services:
+  mongodb:
+    image: mongo:8
+    container_name: eversenior-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: eversenior
+    volumes:
+      - eversenior_mongo_data:/data/db
+
+volumes:
+  eversenior_mongo_data:
